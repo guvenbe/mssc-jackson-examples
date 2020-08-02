@@ -14,9 +14,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @JsonTest
 class BeerDtoTest extends BaseTest {
 
-    @Autowired
-    ObjectMapper objectMapper;
-
     @BeforeEach
     void setUp() {
     }
@@ -31,7 +28,7 @@ class BeerDtoTest extends BaseTest {
 
     @Test
     public void testDeserialize() throws IOException {
-        String json = "{\"id\":\"e1908a93-c68a-4971-8a87-b1de270225d1\",\"beerName\":\"BeerName\",\"beerStyle\":\"Ale\",\"upc\":123123123123,\"price\":12.9900000000000002131628207280300557613372802734375,\"createdDate\":\"2020-08-01T23:22:10.186038-04:00\",\"lastUpdatedDate\":\"2020-08-01T23:22:10.19445-04:00\"}";
+        String json = "{\"beerName\":\"BeerName\",\"beerStyle\":\"Ale\",\"upc\":123123123123,\"price\":\"12.9900000000000002131628207280300557613372802734375\",\"createdDate\":\"2020-08-02T01:20:32-0400\",\"lastUpdatedDate\":\"2020-08-02T01:20:32.884165-04:00\",\"myLocalDate\":\"20200802\",\"beerId\":\"e853a0ec-fe76-4c88-a1db-2557b234c61c\"}";
         BeerDto dto = objectMapper.readValue(json, BeerDto.class);
         System.out.println(dto);
     }
